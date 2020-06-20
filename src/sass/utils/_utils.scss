@@ -1,0 +1,7 @@
+@each $side-name, $side-shortcut in $sides {
+  @for $i from 1 through $numer-of-margin-utility-classes {
+    .m#{$side-shortcut}-#{$i} {
+      margin-#{$side-name}: #{$i}rem !important;
+    }
+  }
+}

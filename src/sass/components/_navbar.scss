@@ -1,0 +1,31 @@
+.navbar {
+  display: flex;
+  width: 100%;
+
+  a {
+    text-decoration: none;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+
+  &__link {
+    color: $grayish-violet;
+    font-size: 1.3rem;
+    font-weight: 700;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $dark-violet;
+    }
+  }
+}

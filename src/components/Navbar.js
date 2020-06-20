@@ -3,22 +3,40 @@ import logo from '../images/logo.svg';
 
 const Navbar = () => {
   return (
-    <div>
-      <img src={logo} alt="Shortly Logo" />
-      <nav>
-        <ul className="main-navigation">
-          <li className="main-navigation__item">Features</li>
-          <li className="main-navigation__item">Pricing</li>
-          <li className="main-navigation__item">Resources</li>
-          <a href="#" className="btn">
-            Login
-          </a>
-          <a href="#" className="btn btn--primary">
-            Sign Up
-          </a>
+    <header className="container header">
+      <img src={logo} alt="Shortly Logo" className="header__logo" />
+      <nav className="navbar">
+        <ul className="navbar__list ml-5">
+          <li className="navbar__item">
+            <a href="#" className="navbar__link">
+              Features
+            </a>
+          </li>
+          <li className="navbar__item">
+            <a href="#" className="navbar__link">
+              Pricing
+            </a>
+          </li>
+          <li className="navbar__item">
+            <a href="#" className="navbar__link">
+              Resources
+            </a>
+          </li>
+        </ul>
+        <ul className="navbar__list ml-auto mr-lg-4">
+          <li className="navbar__item">
+            <a href="#" className="navbar__link">
+              Login
+            </a>
+          </li>
+          <li className="navbar__item">
+            <a href="#" className="btn btn--primary">
+              Sign Up
+            </a>
+          </li>
         </ul>
       </nav>
-    </div>
+    </header>
   );
 };
 
