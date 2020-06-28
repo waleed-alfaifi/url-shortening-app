@@ -1,0 +1,79 @@
+.shorten {
+  padding: 4rem 4rem;
+  background-color: $primary-color-dark;
+  background-image: url('/bg-shorten-desktop.svg');
+  background-repeat: no-repeat;
+  background-position: top;
+
+  border-radius: 0.8rem;
+
+  margin-top: 10rem;
+  margin-bottom: 2rem;
+
+  display: flex;
+  align-items: center;
+
+  &__input {
+    flex: 4;
+  }
+
+  &__button {
+    flex: 1;
+  }
+}
+
+.shortened-url {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-radius: 0.5rem;
+
+  background-color: #ffffff;
+  color: #000000;
+
+  a {
+    text-decoration: none;
+  }
+
+  &__result {
+    a {
+      color: $primary-color;
+
+      &:active {
+        color: $primary-color-dark;
+      }
+    }
+  }
+
+  &__original {
+    margin-right: auto;
+
+    a {
+      color: $dark-violet;
+
+      &:active {
+        color: $grayish-violet;
+      }
+    }
+  }
+
+  &__action-area {
+    display: flex;
+    align-items: center;
+
+    > button {
+      margin-left: 1rem;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+
+.shorten-container {
+  position: relative;
+  bottom: 7rem;
+
+  margin-bottom: 2rem;
+}

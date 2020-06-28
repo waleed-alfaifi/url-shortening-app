@@ -3,7 +3,7 @@ import logo from '../images/logo.svg';
 
 const Navbar = () => {
   return (
-    <header className="container header">
+    <header className="header">
       <img src={logo} alt="Shortly Logo" className="header__logo" />
       <nav className="navbar">
         <ul className="navbar__list ml-5">

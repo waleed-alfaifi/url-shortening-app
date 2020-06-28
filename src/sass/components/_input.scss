@@ -1,0 +1,20 @@
+.input {
+  padding: 1.8rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+
+  &::placeholder {
+    color: $grayish-violet;
+    opacity: 1; /* Firefox */
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.5rem $primary-color;
+    outline: none;
+  }
+
+  // TODO: Use this for validation
+  // &:invalid {
+  //   box-shadow: 0 0 0 0.3rem $secondary-color;
+  // }
+}
