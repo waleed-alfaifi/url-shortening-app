@@ -34,4 +34,18 @@
 .features {
   background-color: $gray-color-light;
   text-align: center;
+  padding-bottom: 13rem;
+
+  &__header {
+    width: 47%;
+    margin: 0 auto;
+  }
+
+  &__heading {
+    padding: 2rem;
+  }
+
+  &__text {
+    color: $grayish-violet;
+  }
 }

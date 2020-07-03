@@ -210,6 +210,20 @@ body {
 .features {
   background-color: #f0f1f6;
   text-align: center;
+  padding-bottom: 13rem;
+}
+
+.features__header {
+  width: 47%;
+  margin: 0 auto;
+}
+
+.features__heading {
+  padding: 2rem;
+}
+
+.features__text {
+  color: #9e9aa7;
 }
 
 .btn {
@@ -267,6 +281,75 @@ body {
 .btn--copy:focus {
   background-color: #3b3054;
   outline: 0;
+}
+
+.card {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  padding-top: 7rem;
+  padding-bottom: 3rem;
+  padding-right: 2.5rem;
+  padding-left: 2.5rem;
+  height: 23rem;
+  max-width: 28rem;
+  text-align: left;
+}
+
+.card:nth-child(1) {
+  top: -3.5rem;
+}
+
+.card:nth-child(3) {
+  bottom: -3.5rem;
+}
+
+.card:not(:last-child) {
+  margin-right: 2.5rem;
+}
+
+.card__image-container {
+  position: absolute;
+  top: -6rem;
+  transform: translateY(25%);
+  background-color: #3b3054;
+  padding: 2rem;
+  border-radius: 50%;
+  width: 8rem;
+  height: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__image {
+  width: 100%;
+}
+
+.card__heading {
+  margin-bottom: 1rem;
+}
+
+.card__text {
+  color: #9e9aa7;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: 12rem;
+}
+
+.cards-container::before {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 0.8rem;
+  transform: translateY(10rem);
+  background-color: #2acfcf;
 }
 
 .heading-primary {
@@ -327,7 +410,7 @@ body {
   background-repeat: no-repeat;
   background-position: top;
   border-radius: 0.8rem;
-  margin-top: 10rem;
+  margin-top: 12rem;
   margin-bottom: 2rem;
   display: flex;
   align-items: center;
@@ -390,5 +473,4 @@ body {
 .shorten-container {
   position: relative;
   bottom: 7rem;
-  margin-bottom: 2rem;
 }

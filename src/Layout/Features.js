@@ -33,12 +33,14 @@ const Features = () => {
     <div className="features">
       <Shorten />
       <section className="container">
-        <h2>Advanced Statistics</h2>
-        <p className="features__text">
-          Track how your links are performing across the web with our advanced
-          statistics dashboard.
-        </p>
-        <div className="some-type-of-container-here">
+        <div className="features__header">
+          <h2 className="features__heading">Advanced Statistics</h2>
+          <p className="features__text">
+            Track how your links are performing across the web with our advanced
+            statistics dashboard.
+          </p>
+        </div>
+        <div className="cards-container">
           {featuresCards.map((feature, index) => {
             const { title, text, image } = feature;
             return (
