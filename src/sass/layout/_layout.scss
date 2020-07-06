@@ -49,3 +49,55 @@
     color: $grayish-violet;
   }
 }
+
+.footer {
+  background-color: $dark-violet;
+  color: #ffffff;
+  padding: 7rem 15rem;
+
+  display: grid;
+  grid-template-columns: 2fr repeat(4, 1fr);
+
+  ul {
+    list-style: none;
+  }
+
+  &__logo {
+    justify-self: start;
+  }
+
+  &__list {
+    &__heading {
+      margin-bottom: 2rem;
+    }
+
+    &__item {
+      font-size: 1.2rem;
+      color: $gray-color;
+
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+
+        &:active {
+          color: $grayish-violet;
+        }
+      }
+    }
+  }
+
+  &__social-list {
+    display: flex;
+    align-items: baseline;
+
+    &__icon {
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+    }
+  }
+}

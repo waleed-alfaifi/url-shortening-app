@@ -226,6 +226,53 @@ body {
   color: #9e9aa7;
 }
 
+.footer {
+  background-color: #232127;
+  color: #ffffff;
+  padding: 7rem 15rem;
+  display: grid;
+  grid-template-columns: 2fr repeat(4, 1fr);
+}
+
+.footer ul {
+  list-style: none;
+}
+
+.footer__logo {
+  justify-self: start;
+}
+
+.footer__list__heading {
+  margin-bottom: 2rem;
+}
+
+.footer__list__item {
+  font-size: 1.2rem;
+  color: #bfbfbf;
+}
+
+.footer__list__item:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.footer__list__item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer__list__item a:active {
+  color: #9e9aa7;
+}
+
+.footer__social-list {
+  display: flex;
+  align-items: baseline;
+}
+
+.footer__social-list__icon:not(:last-child) {
+  margin-right: 2rem;
+}
+
 .btn {
   display: inline-block;
   text-decoration: none;

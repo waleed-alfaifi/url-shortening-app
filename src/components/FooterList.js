@@ -6,7 +6,7 @@ const FooterList = ({ heading, items = [] }) => {
       <h5 className="footer__list__heading">{heading}</h5>
       {items.map((item, index) => (
         <li className="footer__list__item" key={index}>
-          {item}
+          <a href="#">{item}</a>
         </li>
       ))}
     </ul>

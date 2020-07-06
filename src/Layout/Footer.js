@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../images/logo.svg';
+import logo from '../images/logo-white.svg';
 import FooterList from '../components/FooterList';
 
 // Social icons
@@ -26,16 +26,24 @@ const Footer = () => {
       />
       <ul className="footer__social-list">
         <li className="footer__social-list__icon">
-          <img src={facebook} alt="Facebook" />
+          <a href="https://www.facebook.com">
+            <img src={facebook} alt="Facebook" />
+          </a>
         </li>
         <li className="footer__social-list__icon">
-          <img src={twitter} alt="Twitter" />
+          <a href="https://www.twitter.com">
+            <img src={twitter} alt="Twitter" />
+          </a>
         </li>
         <li className="footer__social-list__icon">
-          <img src={pinterest} alt="Pinterest" />
+          <a href="https://www.pinterest.com">
+            <img src={pinterest} alt="Pinterest" />
+          </a>
         </li>
         <li className="footer__social-list__icon">
-          <img src={instagram} alt="Instrgram" />
+          <a href="https://www.instagram.com">
+            <img src={instagram} alt="Instrgram" />
+          </a>
         </li>
       </ul>
     </footer>
