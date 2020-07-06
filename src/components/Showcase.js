@@ -10,7 +10,7 @@ const Showcase = () => {
           Build your brand’s recognition and get detailed insights on how your
           links are performing.
         </p>
-        <a href="#" className="btn btn--primary">
+        <a href="#" className="btn btn--primary btn--md">
           Get Started
         </a>
       </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Card from '../components/Card';
 import Shorten from '../components/Shorten';
 
@@ -43,14 +43,7 @@ const Features = () => {
         <div className="cards-container">
           {featuresCards.map((feature, index) => {
             const { title, text, image } = feature;
-            return (
-              <Card
-                key={index}
-                title={feature.title}
-                text={text}
-                image={image}
-              />
-            );
+            return <Card key={index} title={title} text={text} image={image} />;
           })}
         </div>
       </section>

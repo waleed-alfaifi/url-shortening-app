@@ -1,0 +1,20 @@
+.cta {
+  background-color: $primary-color-dark;
+  background-image: url('/images/bg-boost-desktop.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  color: #ffffff;
+
+  padding: 5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__heading {
+    margin-bottom: 2rem;
+  }
+}

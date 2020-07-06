@@ -13,10 +13,8 @@ function App() {
         <Showcase />
       </div>
       <Features />
-      <div className="container">
-        <CTA />
-        <Footer />
-      </div>
+      <CTA />
+      <Footer />
     </>
   );
 }

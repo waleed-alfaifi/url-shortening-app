@@ -267,6 +267,10 @@ body {
   font-size: inherit;
 }
 
+.btn--md {
+  padding: 0.8rem 2.7rem;
+}
+
 .btn--copy {
   color: #ffffff;
   background-color: #2acfcf;
@@ -352,6 +356,24 @@ body {
   background-color: #2acfcf;
 }
 
+.cta {
+  background-color: #3b3054;
+  background-image: url("/images/bg-boost-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cta__heading {
+  margin-bottom: 2rem;
+}
+
 .heading-primary {
   font-size: 5rem;
   font-weight: 700;
@@ -406,7 +428,7 @@ body {
 .shorten {
   padding: 4rem 4rem;
   background-color: #3b3054;
-  background-image: url("/bg-shorten-desktop.svg");
+  background-image: url("/images/bg-shorten-desktop.svg");
   background-repeat: no-repeat;
   background-position: top;
   border-radius: 0.8rem;
