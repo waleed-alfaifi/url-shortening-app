@@ -12,6 +12,11 @@
   }
 
   &__item {
+    // TODO: Temp
+    @include medium-media {
+      display: none;
+    }
+
     &:not(:last-child) {
       margin-right: 2rem;
     }

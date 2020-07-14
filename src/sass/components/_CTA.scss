@@ -14,7 +14,14 @@
   justify-content: center;
   align-items: center;
 
+  text-align: center;
+
   &__heading {
     margin-bottom: 2rem;
+  }
+
+  @include small-media {
+    background-image: url('/images/bg-boost-mobile.svg');
+    font-size: 1.6rem;
   }
 }

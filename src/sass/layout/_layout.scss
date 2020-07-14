@@ -29,6 +29,37 @@
   &__main-text {
     color: $grayish-violet;
   }
+
+  @include large-media {
+    &__content {
+      padding-right: 2rem;
+      flex-basis: 100%;
+
+      & > .heading-primary {
+        margin-bottom: 1rem;
+      }
+    }
+
+    &__img-container {
+      flex-basis: 100%;
+    }
+  }
+
+  @include medium-media {
+    flex-direction: column;
+
+    &__content {
+      flex-basis: 100%;
+      padding-right: 0;
+      text-align: center;
+    }
+
+    &__img-container {
+      order: -1;
+      flex-basis: 100%;
+      margin-bottom: 2rem;
+    }
+  }
 }
 
 .features {
@@ -48,6 +79,12 @@
   &__text {
     color: $grayish-violet;
   }
+
+  @include medium-media {
+    &__header {
+      width: 100%;
+    }
+  }
 }
 
 .footer {
@@ -56,17 +93,38 @@
   padding: 7rem 15rem;
 
   display: grid;
-  grid-template-columns: 2fr repeat(4, 1fr);
+  grid-template-areas: 'logo logo list1 list2 list3 social';
 
   ul {
     list-style: none;
   }
 
+  a {
+    text-decoration: none;
+    color: inherit;
+
+    &:active {
+      color: $primary-color;
+    }
+  }
+
   &__logo {
-    justify-self: start;
+    grid-area: logo;
   }
 
   &__list {
+    &--1 {
+      grid-area: list1;
+    }
+
+    &--2 {
+      grid-area: list2;
+    }
+
+    &--3 {
+      grid-area: list3;
+    }
+
     &__heading {
       margin-bottom: 2rem;
     }
@@ -78,19 +136,11 @@
       &:not(:last-child) {
         margin-bottom: 1rem;
       }
-
-      a {
-        text-decoration: none;
-        color: inherit;
-
-        &:active {
-          color: $grayish-violet;
-        }
-      }
     }
   }
 
   &__social-list {
+    grid-area: social;
     display: flex;
     align-items: baseline;
 
@@ -99,5 +149,44 @@
         margin-right: 2rem;
       }
     }
+  }
+
+  @include x-large-media {
+    grid-template-areas: 'logo list1 list2 list3 social';
+  }
+
+  @include large-media {
+    padding: 5rem 3rem;
+
+    > * {
+      justify-self: center;
+    }
+  }
+
+  @include medium-media {
+    padding: 5rem 0;
+    grid-template-areas:
+      'logo logo logo'
+      'list1 list2 list3'
+      'social social social';
+    text-align: center;
+
+    &__logo {
+      margin-bottom: 3rem;
+    }
+
+    &__list {
+      &:not(:last-child) {
+        margin-bottom: 3rem;
+      }
+    }
+
+    &__social-list {
+      margin-top: 1.5rem;
+    }
+  }
+
+  @include x-small-media {
+    grid-template-areas: 'logo' 'list1' 'list2' 'list3' 'social';
   }
 }

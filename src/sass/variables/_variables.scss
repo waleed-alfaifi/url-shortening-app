@@ -15,3 +15,10 @@ $sides: (
   'left': 'l',
 );
 $numer-of-margin-utility-classes: 10;
+
+// Breakpoints
+$x-small-breakpoint: 375px;
+$small-breakpoint: 500px;
+$medium-breakpoint: 768px;
+$large-breakpoint: 1024px;
+$x-large-breakpoint: 1800px;

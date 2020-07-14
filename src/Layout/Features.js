@@ -13,18 +13,21 @@ const featuresCards = [
     text: `Boost your brand recognition with each click. Generic links don’t 
     mean a thing. Branded links help instil confidence in your content.`,
     image: brandRecognition,
+    modifier: '1',
   },
   {
     title: 'Detailed Records',
     text: `Gain insights into who is clicking your links. Knowing when and where 
     people engage with your content helps inform better decisions.`,
     image: detailedRecords,
+    modifier: '2',
   },
   {
     title: 'Fully Customizable',
     text: `Improve brand awareness and content discoverability through customizable 
     links, supercharging audience engagement.`,
     image: fullyCustomizable,
+    modifier: '3',
   },
 ];
 
@@ -42,8 +45,16 @@ const Features = () => {
         </div>
         <div className="cards-container">
           {featuresCards.map((feature, index) => {
-            const { title, text, image } = feature;
-            return <Card key={index} title={title} text={text} image={image} />;
+            const { title, text, image, modifier } = feature;
+            return (
+              <Card
+                key={index}
+                title={title}
+                text={text}
+                image={image}
+                modifierClass={modifier}
+              />
+            );
           })}
         </div>
       </section>

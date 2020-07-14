@@ -1,7 +1,8 @@
 .shorten {
-  padding: 4rem 4rem;
+  padding: 4rem;
   background-color: $primary-color-dark;
   background-image: url('/images/bg-shorten-desktop.svg');
+
   background-repeat: no-repeat;
   background-position: top;
 
@@ -15,10 +16,30 @@
 
   &__input {
     flex: 4;
+    margin-right: 3rem;
   }
 
   &__button {
     flex: 1;
+  }
+
+  @include medium-media {
+    background-image: url('/images/bg-shorten-mobile.svg');
+    background-position: right;
+    padding: 2rem;
+
+    flex-direction: column;
+    justify-content: center;
+
+    &__input {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 2rem;
+    }
+
+    &__button {
+      width: 100%;
+    }
   }
 }
 
@@ -27,6 +48,7 @@
   align-items: center;
   padding: 1.5rem 2rem;
   border-radius: 0.5rem;
+  overflow: hidden !important;
 
   background-color: #ffffff;
   color: #000000;
@@ -46,7 +68,11 @@
   }
 
   &__original {
+    max-width: 50%;
     margin-right: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 
     a {
       color: $dark-violet;
@@ -68,6 +94,50 @@
 
   &:not(:last-child) {
     margin-bottom: 1rem;
+  }
+
+  @include medium-media {
+    flex-direction: column;
+    align-items: flex-start;
+
+    text-align: left;
+
+    &__result {
+      margin-bottom: 1rem;
+    }
+
+    &__original {
+      margin-right: 0;
+      max-width: 100%;
+    }
+
+    &__underline {
+      display: inline-block;
+      border-bottom: 1px solid $gray-color-light;
+
+      // For the line to take the whole width of parent element.
+      width: 500%;
+      margin-left: -200%;
+
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    &__action-area {
+      flex-direction: column;
+      align-items: flex-start;
+
+      width: 100%;
+
+      > button {
+        margin-left: 0;
+        width: 100%;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 2.5rem;
+    }
   }
 }
 

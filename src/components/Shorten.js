@@ -1,4 +1,5 @@
 import React from 'react';
+import ShortenedURL from './ShortenedURL';
 
 const Shorten = () => {
   return (
@@ -7,7 +8,7 @@ const Shorten = () => {
         <input
           type="text"
           placeholder="Shorten a link here..."
-          className="input shorten__input mr-3"
+          className="input shorten__input"
           required
         />
         <span className="validation__error"></span>
@@ -18,75 +19,19 @@ const Shorten = () => {
           Shorten it
         </button>
       </form>
-      <div className="shortened-url">
-        <div className="shortened-url__original">
-          <a
-            href="https://www.waleedalfaifi.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            https://www.waleedalfaifi.com
-          </a>
-        </div>
-        <div className="shortened-url__action-area">
-          <div className="shortened-url__result">
-            <a
-              href="https://rel.ink/k4lKyk"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              https://rel.ink/k4lKyk
-            </a>
-          </div>
-          <button className="btn btn--copy">Copy</button>
-        </div>
-      </div>
-      <div className="shortened-url">
-        <div className="shortened-url__original">
-          <a
-            href="https://www.waleedalfaifi.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            https://www.waleedalfaifi.com
-          </a>
-        </div>
-        <div className="shortened-url__action-area">
-          <div className="shortened-url__result">
-            <a
-              href="https://rel.ink/k4lKyk"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              https://rel.ink/k4lKyk
-            </a>
-          </div>
-          <button className="btn btn--copy">Copy</button>
-        </div>
-      </div>
-      <div className="shortened-url">
-        <div className="shortened-url__original">
-          <a
-            href="https://www.waleedalfaifi.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            https://www.waleedalfaifi.com
-          </a>
-        </div>
-        <div className="shortened-url__action-area">
-          <div className="shortened-url__result">
-            <a
-              href="https://rel.ink/k4lKyk"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              https://rel.ink/k4lKyk
-            </a>
-          </div>
-          <button className="btn btn--copy">Copy</button>
-        </div>
-      </div>
+
+      <ShortenedURL
+        originalLink="https://www.twitter.com/waleed-alfaifi/waleed-alfaifi/waleed-alfaifi/waleed-alfaifi/waleed-alfaifi"
+        result="https://rel.ink/k4lKyk"
+      />
+      <ShortenedURL
+        originalLink="https://www.frontendmentor.io"
+        result="https://rel.ink/k4lKyk"
+      />
+      <ShortenedURL
+        originalLink="https://www.frontendmentor.io"
+        result="https://rel.ink/k4lKyk"
+      />
     </div>
   );
 };

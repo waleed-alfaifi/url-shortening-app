@@ -15,14 +15,17 @@ const Footer = () => {
       <FooterList
         heading="Features"
         items={['Link Shortening', 'Branded Links', 'Analytics']}
+        order="1"
       />
       <FooterList
         heading="Resources"
         items={['Blog', 'Developers', 'Support']}
+        order="2"
       />
       <FooterList
         heading="Company"
         items={['About', 'Our Team', 'Careers', 'Contact']}
+        order="3"
       />
       <ul className="footer__social-list">
         <li className="footer__social-list__icon">

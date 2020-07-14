@@ -1,0 +1,35 @@
+@mixin x-small-media {
+  @media screen and (max-width: $x-small-breakpoint) {
+    @content;
+  }
+}
+
+@mixin small-media {
+  @media screen and (max-width: $small-breakpoint) {
+    @content;
+  }
+}
+
+@mixin medium-media {
+  @media screen and (max-width: $medium-breakpoint) {
+    @content;
+  }
+}
+
+@mixin large-media($strict_media: false) {
+  @if $strict_media {
+    @media screen and (max-width: $large-breakpoint) and (min-width: $medium-breakpoint) {
+      @content;
+    }
+  } @else {
+    @media screen and (max-width: $large-breakpoint) {
+      @content;
+    }
+  }
+}
+
+@mixin x-large-media {
+  @media screen and (min-width: $x-large-breakpoint) {
+    @content;
+  }
+}

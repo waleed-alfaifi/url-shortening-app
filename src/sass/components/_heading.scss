@@ -2,4 +2,8 @@
   font-size: 5rem;
   font-weight: 700;
   line-height: 1.2;
+
+  @include x-small-media {
+    font-size: 4rem;
+  }
 }

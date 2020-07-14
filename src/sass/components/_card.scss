@@ -1,5 +1,6 @@
 .card {
   position: relative;
+  z-index: 100;
 
   background-color: #ffffff;
   border-radius: 0.5rem;
@@ -14,11 +15,11 @@
 
   text-align: left;
 
-  &:nth-child(1) {
+  &--1 {
     top: -3.5rem;
   }
 
-  &:nth-child(3) {
+  &--3 {
     bottom: -3.5rem;
   }
 
@@ -56,6 +57,60 @@
     font-size: 1.2rem;
     line-height: 1.8;
   }
+
+  @include large-media($strict_media: true) {
+    text-align: center;
+
+    &--1 {
+      top: 0;
+      grid-area: card1;
+    }
+
+    &--2 {
+      grid-area: card2;
+    }
+
+    &--3 {
+      bottom: 0;
+      grid-area: card3;
+    }
+
+    &:not(:last-child) {
+      margin-right: 0;
+    }
+
+    &__image-container {
+      left: 50%;
+      transform: translateX(-50%);
+      top: -4rem;
+    }
+  }
+
+  @include medium-media {
+    text-align: center;
+    max-width: 100%;
+
+    &:not(:last-child) {
+      margin-right: 0;
+      margin-bottom: 5rem;
+    }
+
+    &__image-container {
+      left: 50%;
+      transform: translateX(-50%);
+      top: -4rem;
+    }
+
+    &__text {
+      font-size: 1.6rem;
+    }
+  }
+
+  @include small-media {
+    &__text {
+      font-size: 1.3rem;
+    }
+  }
 }
 
 .cards-container {
@@ -74,5 +129,29 @@
     height: 0.8rem;
     transform: translateY(10rem);
     background-color: $primary-color;
+  }
+
+  @include large-media($strict_media: true) {
+    display: grid;
+    grid-template-areas:
+      'card1 card2'
+      'card3 card3';
+    row-gap: 10rem;
+    column-gap: 7rem;
+    justify-items: center;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  @include medium-media {
+    flex-direction: column;
+    align-items: center;
+
+    &::before {
+      transform: rotate(90deg) translateY(0);
+      width: 45rem;
+    }
   }
 }
