@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../images/logo.svg';
+import ResponsiveMenu from './ResponsiveMenu';
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header className="header">
       <img src={logo} alt="Shortly Logo" className="header__logo" />
@@ -35,6 +38,18 @@ const Navbar = () => {
             </a>
           </li>
         </ul>
+        <button
+          className="navbar__menu__toggler ml-auto mr-1"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? (
+            <i className="las la-times"></i>
+          ) : (
+            <i className="las la-bars"></i>
+          )}
+        </button>
+
+        {menuOpen && <ResponsiveMenu />}
       </nav>
     </header>
   );
