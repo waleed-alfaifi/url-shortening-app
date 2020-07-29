@@ -1,4 +1,5 @@
 .shorten {
+  position: relative;
   padding: 4rem;
   background-color: $primary-color-dark;
   background-image: url('/images/bg-shorten-desktop.svg');
@@ -14,9 +15,40 @@
   display: flex;
   align-items: center;
 
-  &__input {
+  &__input-container {
     flex: 4;
     margin-right: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+  }
+
+  &__input {
+    width: 100%;
+    flex: 4;
+    margin-right: 3rem;
+
+    &__validation {
+      display: none;
+      position: absolute;
+      top: 10rem;
+      color: $secondary-color;
+    }
+
+    &:focus:invalid {
+      box-shadow: 0 0 0 0.3rem $secondary-color;
+    }
+
+    &:focus:invalid ~ &__validation {
+      display: block;
+    }
+
+    &:focus:invalid::placeholder {
+      color: $secondary-color;
+    }
   }
 
   &__button {
@@ -30,15 +62,24 @@
 
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
 
     &__input {
-      width: 100%;
       margin-right: 0;
       margin-bottom: 2rem;
+
+      &__validation {
+        top: 7.5rem;
+      }
+    }
+
+    &__input:focus:invalid ~ &__button {
+      margin-top: 1.5rem;
     }
 
     &__button {
       width: 100%;
+      // margin-top: 2rem;
     }
   }
 }

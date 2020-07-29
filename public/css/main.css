@@ -744,6 +744,7 @@ body {
 }
 
 .shorten {
+  position: relative;
   padding: 4rem;
   background-color: #3b3054;
   background-image: url("/images/bg-shorten-desktop.svg");
@@ -756,9 +757,38 @@ body {
   align-items: center;
 }
 
-.shorten__input {
+.shorten__input-container {
   flex: 4;
   margin-right: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.shorten__input {
+  width: 100%;
+  flex: 4;
+  margin-right: 3rem;
+}
+
+.shorten__input__validation {
+  display: none;
+  position: absolute;
+  top: 10rem;
+  color: #f46262;
+}
+
+.shorten__input:focus:invalid {
+  box-shadow: 0 0 0 0.3rem #f46262;
+}
+
+.shorten__input:focus:invalid ~ .shorten__input__validation {
+  display: block;
+}
+
+.shorten__input:focus:invalid::placeholder {
+  color: #f46262;
 }
 
 .shorten__button {
@@ -772,11 +802,17 @@ body {
     padding: 2rem;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
   }
   .shorten__input {
-    width: 100%;
     margin-right: 0;
     margin-bottom: 2rem;
+  }
+  .shorten__input__validation {
+    top: 7.5rem;
+  }
+  .shorten__input:focus:invalid ~ .shorten__button {
+    margin-top: 1.5rem;
   }
   .shorten__button {
     width: 100%;
