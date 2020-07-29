@@ -12,11 +12,6 @@
   }
 
   &__item {
-    // TODO: Temp
-    @include medium-media {
-      display: none;
-    }
-
     &:not(:last-child) {
       margin-right: 2rem;
     }
@@ -91,8 +86,15 @@
         font-size: 3rem;
       }
     }
+  }
 
-    @include medium-media {
+  @include medium-media {
+    // On small screens, these items will be replaced by hamburger menu items
+    &__item {
+      display: none;
+    }
+
+    &__menu {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -102,8 +104,10 @@
         display: block;
       }
     }
+  }
 
-    @include small-media {
+  @include small-media {
+    &__menu {
       max-width: 90%;
     }
   }

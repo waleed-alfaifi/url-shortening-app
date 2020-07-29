@@ -1,8 +1,15 @@
 @each $side-name, $side-shortcut in $sides {
-  @for $i from 1 through $numer-of-margin-utility-classes {
+  @for $i from 1 through $number-of-margin-utility-classes {
     .m#{$side-shortcut}-#{$i} {
       margin-#{$side-name}: #{$i}rem !important;
     }
+  }
+}
+
+// Auto margin util classes
+@each $side-name, $side-shortcut in $sides {
+  .m#{$side-shortcut}-auto {
+    margin-#{$side-name}: auto !important;
   }
 }
 

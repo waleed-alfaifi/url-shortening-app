@@ -26,7 +26,7 @@ const Navbar = () => {
             </a>
           </li>
         </ul>
-        <ul className="navbar__list ml-auto mr-lg-4">
+        <ul className="navbar__list ml-auto">
           <li className="navbar__item">
             <a href="#" className="navbar__link">
               Login
