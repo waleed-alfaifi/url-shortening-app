@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import ClipboardJS from 'clipboard';
 import ShortenedURL from './ShortenedURL';
 
 const Shorten = () => {
@@ -24,6 +25,21 @@ const Shorten = () => {
   useEffect(() => {
     localStorage.setItem('urls', JSON.stringify(shortenedUrls));
   }, [shortenedUrls]);
+
+  // Initialize clipboard.js
+  useEffect(() => {
+    const clipboard = new ClipboardJS('.btn--copy');
+
+    clipboard.on('success', (e) => {
+      e.trigger.classList.add('copied');
+      e.trigger.innerHTML = 'Copied!';
+
+      setTimeout(() => {
+        e.trigger.classList.remove('copied');
+        e.trigger.innerHTML = 'Copy';
+      }, 5000);
+    });
+  }, []);
 
   useEffect(() => {
     if (urlInput.current) {

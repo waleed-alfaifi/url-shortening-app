@@ -50,7 +50,6 @@
     padding: 0.8rem 2.7rem;
   }
 
-  // TODO: Need changes
   &--copy {
     color: #ffffff;
     background-color: $primary-color;
@@ -64,6 +63,10 @@
     &:focus {
       background-color: $primary-color-dark;
       outline: 0;
+    }
+
+    &.copied {
+      background-color: $primary-color-dark;
     }
 
     @include medium-media {

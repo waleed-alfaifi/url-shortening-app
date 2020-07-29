@@ -17,7 +17,9 @@ const ShortenedURL = ({ originalLink, result, classes }) => {
             {result}
           </a>
         </div>
-        <button className="btn btn--copy">Copy</button>
+        <button className="btn btn--copy" data-clipboard-text={result}>
+          Copy
+        </button>
       </div>
     </div>
   );

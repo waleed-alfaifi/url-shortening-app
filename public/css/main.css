@@ -431,6 +431,10 @@ body {
   outline: 0;
 }
 
+.btn--copy.copied {
+  background-color: #3b3054;
+}
+
 @media screen and (max-width: 768px) {
   .btn--copy {
     padding-top: 1.2rem;
