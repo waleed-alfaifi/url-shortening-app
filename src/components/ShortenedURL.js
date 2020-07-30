@@ -1,10 +1,10 @@
 import React from 'react';
 
 const ShortenedURL = ({ originalLink, result, classes }) => {
-  const className = classes ? ` animate__animated ${classes}` : '';
+  const animationClasses = classes ? ` animate__animated ${classes}` : '';
 
   return (
-    <div className={`shortened-url${className}`}>
+    <div className={`shortened-url${animationClasses}`}>
       <div className="shortened-url__original">
         <a href={originalLink} target="_blank" rel="noopener noreferrer">
           {originalLink}

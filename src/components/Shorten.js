@@ -6,6 +6,7 @@ const Shorten = () => {
   const [shortenedUrl, setShortenedUrl] = useState('');
   const [shortenedUrls, setShortenedUrls] = useState([]);
   const [currentResultUrl, setCurrentResultUrl] = useState('');
+  const [success, setSuccess] = useState(false);
   const [validationMsg, setValidationMsg] = useState('');
 
   const urlInput = useRef(null);
@@ -51,6 +52,14 @@ const Shorten = () => {
     setValidationMsg(urlInput.current.validationMessage);
   }, [shortenedUrl]);
 
+  useEffect(() => {
+    if (success === true) {
+      setTimeout(() => {
+        setSuccess(false);
+      }, 1500);
+    }
+  }, [success]);
+
   const updateShortenedUrls = (url) => {
     const { hashid } = url;
     setCurrentResultUrl(hashid);
@@ -83,6 +92,7 @@ const Shorten = () => {
 
       if (res.ok) {
         updateShortenedUrls(data);
+        setSuccess(true);
       }
     } catch (error) {
       console.error('Error shortening url', error);
@@ -119,7 +129,13 @@ const Shorten = () => {
             key={index}
             originalLink={originalLink}
             result={result}
-            classes={currentResultUrl === hashid ? 'animate__headShake' : ''}
+            classes={
+              currentResultUrl === hashid
+                ? 'animate__flash'
+                : success
+                ? 'animate__headShake'
+                : ''
+            }
           />
         );
       })}

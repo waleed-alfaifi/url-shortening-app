@@ -774,15 +774,6 @@ body {
   align-items: center;
 }
 
-.shorten__input-container {
-  flex: 4;
-  margin-right: 3rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-}
-
 .shorten__input {
   width: 100%;
   flex: 4;
