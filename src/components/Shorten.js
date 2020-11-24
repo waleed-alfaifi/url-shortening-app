@@ -5,7 +5,6 @@ import ShortenedURL from './ShortenedURL';
 const Shorten = () => {
   const [shortenedUrl, setShortenedUrl] = useState('');
   const [shortenedUrls, setShortenedUrls] = useState([]);
-  const [currentResultUrl, setCurrentResultUrl] = useState('');
   const [success, setSuccess] = useState(false);
   const [validationMsg, setValidationMsg] = useState('');
 
@@ -61,12 +60,14 @@ const Shorten = () => {
   }, [success]);
 
   const updateShortenedUrls = (url) => {
-    const { hashid } = url;
-    setCurrentResultUrl(hashid);
-    const filteredUrls = shortenedUrls.filter((url) => url.hashid === hashid);
+    const { code, original_link } = url;
+    const filteredUrls = shortenedUrls.filter(
+      (url) => url.code === code || url.original_link === original_link
+    );
 
+    // i.e. url does not exist already
     if (filteredUrls.length === 0) {
-      setShortenedUrls((prevUrls) => [...prevUrls, url]);
+      setShortenedUrls((prevUrls) => [url, ...prevUrls]);
     }
   };
 
@@ -74,25 +75,29 @@ const Shorten = () => {
     e.preventDefault();
 
     try {
-      const body = JSON.stringify({
-        url: shortenedUrl,
-      });
+      const baseAPIUrl = 'https://api.shrtco.de/v2/';
 
-      const res = await fetch('https://rel.ink/api/links/', {
-        method: 'POST',
-        body,
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+      const res = await fetch(`${baseAPIUrl}/shorten?url=${shortenedUrl}`);
 
       const data = await res.json();
 
       setShortenedUrl('');
 
-      if (res.ok) {
-        updateShortenedUrls(data);
+      if (data.ok) {
+        const {
+          result: { code, original_link },
+        } = data;
+        const url = {
+          code,
+          original_link,
+        };
+
+        updateShortenedUrls(url);
         setSuccess(true);
+      } else {
+        const { error } = data;
+        alert(error);
+        console.log('data', data);
       }
     } catch (error) {
       console.error('Error shortening url', error);
@@ -121,21 +126,15 @@ const Shorten = () => {
       </form>
 
       {shortenedUrls.map((url, index) => {
-        const { url: originalLink, hashid } = url;
-        const result = `https://rel.ink/${hashid}`;
+        const { original_link, code } = url;
+        const result = `https://shrtco.de/${code}`;
 
         return (
           <ShortenedURL
             key={index}
-            originalLink={originalLink}
+            originalLink={original_link}
             result={result}
-            classes={
-              currentResultUrl === hashid
-                ? 'animate__flash'
-                : success
-                ? 'animate__headShake'
-                : ''
-            }
+            classes={success ? 'animate__headShake' : ''}
           />
         );
       })}
