@@ -77,7 +77,7 @@ const Shorten = () => {
     try {
       const baseAPIUrl = 'https://api.shrtco.de/v2/';
 
-      const res = await fetch(`${baseAPIUrl}/shorten?url=${shortenedUrl}`);
+      const res = await fetch(`${baseAPIUrl}shorten?url=${shortenedUrl}`);
 
       const data = await res.json();
 
